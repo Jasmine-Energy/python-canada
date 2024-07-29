@@ -1,0 +1,20 @@
+.env
+
+venv/
+
+# Compilation and caching
+build/
+dist/
+.cache/
+.mypy_cache/
+.pytest_cache/
+.tox/
+__pycache__/
+*.pyc
+
+# Distribution files
+dist/
+canada.egg-info/
+
+# System files
+.DS_Store
