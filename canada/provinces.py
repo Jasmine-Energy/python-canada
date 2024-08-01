@@ -6,8 +6,6 @@ from dataclasses import dataclass
 
 import jellyfish
 
-# import jellyfish  # type: ignore
-
 NUMR_RE = re.compile(r"^\d{2}$")
 ABBR_RE = re.compile(r"^[a-zA-Z]{2}$")
 
