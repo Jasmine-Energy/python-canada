@@ -1,18 +1,22 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["poetry-core>=1.2.0", "wheel",]
+build-backend = "poetry.core.masonry.api"
 
-[project]
+[tool.poetry.dependencies]
+python = "^3.9"
+jellyfish = "^1.1.0"
+ruff = "^0.5.5"
+
+[tool.poetry]
 name = "canada"
 description = "Canadian provinces and territories"
 readme = "README.md"
-urls.Homepage = "https://github.com/jasmine-energy/python-canada/"
-urls."Issue tracker" = "https://github.com/jasmine-energy/python-canada/issues"
-requires-python = ">=3.9"
-dynamic = ["version"]
+version = "0.0.1"
+homepage = "https://github.com/jasmine-energy/python-canada/"
+repository = "https://github.com/jasmine-energy/python-canada/"
+packages = [{include = "canada"}]
 authors = [
-    { name = "Vince Enachescu", email = "vince@jasmine.energy" }
-    { name = "", email = "" }
-    { name = " ", email = "" }
+    "Vince Enachescu <vince@jasmine.energy>",
 ]
 classifiers = [
     "Programming Language :: Python",
@@ -21,17 +25,11 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12"
 ]
-license = { file = "LICENSE"}
 
-dependencies = ['jellyfish']
+[tool.poetry.group.dev.dependencies]
+ruff = "*"
 
-[project.optional-dependencies]
-dev = ['flake8', 'black', 'pytest', 'pytz']
-
-[tool.setuptools.dynamic]
-version = { attr = "canada.version.__version__" }
-
-[tool.black]
-line-length = 120
-target-version = ['py39', 'py310', 'py311', 'py312']
-include = '\.pyi?$'
+[tool.poetry.group.test.dependencies]
+coverage = "*"
+pytest = "*"
+pytest-cov = "*"

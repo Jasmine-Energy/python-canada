@@ -3,4 +3,4 @@ from .provinces import (  # noqa
     PROVINCES_AND_TERRITORIES,  # noqa
 )  # noqa
 from .canada import *  # noqa
-from .version import __version__ as version
+from .version import __version__ as version # noqa
