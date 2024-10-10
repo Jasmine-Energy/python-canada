@@ -68,7 +68,7 @@ include-package-data = true
 canada = ["py.typed"]
 
 [tool.setuptools.dynamic]
-version = {attr = "canada.version.VERSION"}
+version = {attr = "canada.version.__version__"}
 
 [tool.black]
 line-length = 100
